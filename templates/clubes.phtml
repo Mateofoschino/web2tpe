@@ -1,0 +1,28 @@
+<?php require './templates/header.phtml'; ?>
+<?php require './templates/clubes_agregar.phtml'; ?>
+<table class="table">
+    
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Club</th>
+                <th>Liga</th>
+            </tr>
+        </thead>
+        <?php foreach ($clubes as $club) : ?>
+            <tbody>
+                <tr>
+                    <th><?= $club->Club_ID ?></th>
+                    <td><?= $club->Nombre ?></td>
+                    <td><?= $club->Liga ?></td>
+                    <?php if (AuthHelper::verify()) : ?> 
+                        <td><a href="deleteClub/<?= $club->Club_ID ?> "><button class="btn btn-secondary ml-auto">Borrar Club</button></a></td>
+                        <td><a href="preModifyClub/<?= $club->Club_ID ?> "><button class="btn btn-secondary ml-auto">Modificar Club</button></a></td>
+                    <?php endif ?>
+                </tr>
+            <?php endforeach ?>
+            <p>Para eliminar un club, no debe haber ningun jugador que pertenezca al mismo</p>
+            </tbody>
+        
+    </table>
+<?php require './templates/footer.phtml'; ?>

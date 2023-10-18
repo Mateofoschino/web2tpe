@@ -1,0 +1,27 @@
+<?php require 'templates/header.phtml' ?>
+<?php if (AuthHelper::verify()) : ?>
+    <div class="mt-5 w-25 mx-auto">
+        <form method="POST" action="modify/<?=$Jugador_ID?>">
+            <p>Recuerda completar todos los campos, si no seras redirigido al home</p>
+            <div class="mb-3">
+                <label ss="form-label">Nombre</label>
+                <input type="text" class="form-control" name="Nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Club</label>
+                <input type="number" class="form-control" name="Club">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Goles</label>
+                <input type="number" class="form-control" name="Goles">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PJ</label>
+                <input type="number" class="form-control" name="PJ">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+    </div>
+<?php endif ?>
+<?php require 'templates/footer.phtml' ?>

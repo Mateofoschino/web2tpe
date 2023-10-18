@@ -1,0 +1,27 @@
+<?php require './templates/header.phtml'; ?>
+<div class="mt-5 w-25 mx-auto">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Club</th>
+                <th>Goles</th>
+                <th>PJ</th>
+            </tr>
+        </thead>
+
+        <?php foreach ($goleadores as $goleador) : ?>
+            <tbody>
+                <tr>
+                    <th><?= $goleador->Jugador_ID ?></th>
+                    <td><?= $goleador->Nombre ?></td>
+                    <td><?= $goleador->Club ?></td>
+                    <td><?= $goleador->Goles ?></td>
+                    <td><?= $goleador->PJ ?> <a href="home"><button class="btn btn-secondary">Volver</button></td></a>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+    </table>
+</div>
+<?php require './templates/footer.phtml'; ?>

@@ -1,0 +1,18 @@
+<?php require 'templates/header.phtml' ?>
+<?php if (AuthHelper::verify()) : ?>
+    <div class="mt-5 w-25 mx-auto">
+        <form method="POST" action="modifyClub/<?=$Club_ID?>">
+            <p>Recuerda completar todos los campos, si no seras redirigido al home</p>
+            <div class="mb-3">
+                <label ss="form-label">Nuevo nombre de club</label>
+                <input type="text" class="form-control" name="Nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nueva liga</label>
+                <input type="text" class="form-control" name="Liga">
+            </div>
+            <button type="submit" class="btn btn-primary">Modificar Club</button>
+        </form>
+    </div>
+<?php endif ?>
+<?php require 'templates/footer.phtml' ?>
